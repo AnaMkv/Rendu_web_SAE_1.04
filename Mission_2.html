@@ -1,0 +1,147 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        
+        <div class = "navigation">
+            <nav>
+                <div class="img_NAV">
+                    <img src="images/KDOU_COMPTE_RENDU_NAV.png" alt="logo de kdou">
+                </div>
+                <input type="checkbox" id="burger-toggle">
+                <label for="burger-toggle" class="burger-icon">☰</label>
+                <ul class="menu_nav">
+                    <li><a href="Accueil.html"> ACCUEIL</a></li>
+                    <li><a href="Mission_1.html">MISSION 1</a></li>
+                    <li><a href="Mission_2.html">MISSION 2</a></li>
+                    <li><a href="Mission_3.html">MISSION 3</a></li>
+                    <li><a href="Mission_4.html">MISSION 4</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="main_Adam">
+            
+            
+                <section>
+                    <h1>MISSION 2</h1>
+                </section>
+                <section class="section_objectif">
+                        <img src="images/mission_2/objectif.jpg" alt="image objectif">
+                    <div>
+                        <h2 class="h2_Adam">Objectif</h2>
+                        <p>
+                            Cette mission a pour but d'exploiter la base de données de KDou pour générerdes analyses et des indicateurs stratégiques. Les données présentes, qu'elles soient opérationnelles, financières ou commerciales, offrent une perspective précieuse pour comprendre les mécanismes internes de l'entreprise et déceler des pistes d'optimisation.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section_access">
+                    <div>
+                        <h2 class="h2_Adam">Outil Utilisé : Low Code Access</h2>
+                        <p>
+                            Nous avons choisi le logiciel Low Code Access afin de faciliter le développement de requêtes et l’extraction d’informations. Cet outil intuitif permet à des utilisateurs non expérimentés en programmation de créer des requêtes rapidement et de visualiser les données de manière efficace, tout en minimisant les erreurs potentielles.
+                        </p>
+                    </div>
+                        <img src="images/mission_2/access.jpg" alt="image access">
+                </section>
+
+                <h2 class="h2_Adam">Exemples de Requêtes et Résultats</h2>
+
+    <!----------------------------------- DEBUT ACCORDEONS ------------------------------------------->
+
+                <section class="accordeon1">
+                    <input type="checkbox" id="accordeon1" class="accordeon1-checkbox">
+                    <label for="accordeon1" class="accordeon1-toggle">1. Adresse du fournisseur Marie Delamare</label>
+                    <div class="accordeon1-content">
+                        <p>
+                        <strong>Requête QBE :</strong> <br>
+                        <code>SELECT Fournisseur.Contact FROM Fournisseur WHERE Fournisseur.Contact="Marie Delamare" ORDER BY Fournisseur.Contact;</code>
+                    </p>
+                    <p>
+                    <strong>Résultat :</strong> <br>
+                    Nous en déduisons que la fournisseuse Marie Delamare n’existe pas dans la base de données.</p>
+                    </div>
+                </section>
+
+                <section class="accordeon2">
+                    <input type="checkbox" id="accordeon2" class="accordeon2-checkbox">
+                    <label for="accordeon2" class="accordeon2-toggle">2. Fonction du fournisseur "Ma Maison"</label>
+                    <div class="accordeon2-content">
+                        <p>
+                        <strong>Requête QBE :</strong> <br>
+                        <code>SELECT Fournisseur.Societe, Fournisseur.Fonction FROM Fournisseur WHERE Fournisseur.Societe="Ma Maison" ORDER BY Fournisseur.Societe, Fournisseur.Fonction;</code>
+                    </p>
+                    <p>
+                    <strong>Résultat :</strong> <br>
+                    Le fournisseur “Ma Maison” a pour fonction “Directeur du marketing”.</p>
+                    </div>
+                </section>
+
+                <section class="accordeon3">
+                    <input type="checkbox" id="accordeon3" class="accordeon3-checkbox">
+                    <label for="accordeon3" class="accordeon3-toggle">3. Catégories de produits des fournisseurs de Singapour</label>
+                    <div class="accordeon3-content">
+                        <p>
+                        <strong>Requête QBE :</strong> <br>
+                        <code>SELECT Fournisseur.Pays, Categorie.NomCateg FROM Fournisseur, Categorie WHERE Fournisseur.Pays="Singapour" ORDER BY Categorie.NomCateg;</code>
+                    </p>
+                    <p>
+                    <strong>Résultat :</strong> <br>
+                    Les catégories de produits incluent boissons, condiments, desserts, pâtes, poissons, produits laitiers, produits secs et viandes.</p>
+                    </div>
+                </section>
+
+                <section class="accordeon4">
+                    <input type="checkbox" id="accordeon4" class="accordeon4-checkbox">
+                    <label for="accordeon4" class="accordeon4-toggle">4. Produits de type viande livrés à Paris</label>
+                    <div class="accordeon4-content">
+                        <p>
+                        <strong>Requête QBE :</strong> <br>
+                        <code>SELECT DISTINCTROW Categorie.NomCateg, Produit.NomProd FROM (Client INNER JOIN Commande ON Client.CodeCli = Commande.CodeCli) INNER JOIN ((Categorie INNER JOIN Produit ON Categorie.CodeCateg = Produit.CodeCateg) INNER JOIN DetailCommande ON Produit.RefProd = DetailCommande.RefProd) ON Commande.NoCom = DetailCommande.NoCom WHERE Categorie.NomCateg="Viandes" AND Client.VilleCli="Paris" ORDER BY Produit.NomProd;</code>
+                    </p>
+                    <p>
+                    <strong>Résultat :</strong> <br>
+                    Les produits de type viandes livrés à Paris incluent : “Alice Mutton”, “Mishi Kobe Niku”, etc.</p>
+                    </div>
+                </section>
+
+    <!-------------------------------------------- FIN ACCORDEONS ------------------------------------->
+
+                <section>
+                    <h2 class="h2_Adam">Analyse des Données</h2>
+                    <p>
+                        Le chiffre d’affaires total est de <strong>66 344,82€</strong>. De plus, aucune des clients n’a été identifiée comme n’ayant pas passé de commande.
+                    </p>
+                </section>
+
+                <section class="section_probleme">
+                    <div>
+                        <h2 class="h2_Adam">Problèmes Rencontrés</h2>
+                        <p>
+                            Nous avons rencontré des difficultés de compréhension dues à la formulation des demandes et à la complexité de certaines requêtes. Cela a affecté notre capacité à interpréter correctement les résultats.
+                        </p>
+                    </div>
+                    <img src="images/mission_2/probleme.jpg" alt="image probleme">
+                </section>
+
+                <section class="section_amelio">
+                    <img src="images/mission_2/amelioration.png" alt="image amelioration">
+                    <div>
+                        <h2 class="h2_Adam">Améliorations Potentielles</h2>
+                        <p>
+                            Une clarification des attributs, notamment ceux avec des noms abrégés, serait bénéfique. De plus, il serait judicieux de corriger les incohérences, comme l’écriture du pays “Suède” qui apparaît de deux manières différentes.
+                        </p>
+                    </div>
+                </section>
+
+        </section>
+        <!-- Pied de page -->
+        <footer>
+          <p>&copy; 2024 - SAE 1.04 – Abdelhafid Farah Anastasia Adam –</p>
+        </footer>
+    </body>
+</html>

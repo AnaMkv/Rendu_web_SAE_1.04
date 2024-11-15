@@ -1,0 +1,364 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body class="body_abdel" >
+        <div class = "navigation">
+            <nav>
+                <div class="img_NAV">
+                    <img src="images/KDOU_COMPTE_RENDU_NAV.png" alt="logo de kdou">
+                </div>
+                <input type="checkbox" id="burger-toggle">
+                <label for="burger-toggle" class="burger-icon">☰</label>
+                <ul class="menu_nav">
+                    <li><a href="Accueil.html"> ACCUEIL</a></li>
+                    <li><a href="Mission_1.html">MISSION 1</a></li>
+                    <li><a href="Mission_2.html">MISSION 2</a></li>
+                    <li><a href="Mission_3.html">MISSION 3</a></li>
+                    <li><a href="Mission_4.html">MISSION 4</a></li>
+                </ul>
+            </nav>
+        </div>           
+        <main class="Abdel_pages">
+            
+            <section><!--NAV-->
+                
+                    
+                
+  
+                <!-- Contenu principal -->
+            </section>
+            <section><!--CORPS DE LA PAGE-->
+
+                    <div class="h1_abd">
+                        <h1>MISSION 1</h1>
+                    </div>
+                    <hr>
+                    <h2 class="h2_ABD">Contexte</h2>
+                    <hr>
+                    <section class="PRESENTATIONS">
+
+                        <div class="img_kdou">
+                            <img src="images/logo3.jpg" alt="Kdou images">
+                        </div>
+                        <div class="Presentation">
+                            <p>
+                                Kdou est une entreprise spécialisée dans la vente de produits alimentaires d'épicerie fine et de spécialités typiques, provenant de fournisseurs sélectionnés aux quatre pièces du monde. Ses clients, actuellement basés en France, conservent l'authenticité et la qualité de ses produits. Bien que l'entreprise affiche un chiffre d'affaires satisfaisant, elle souhaite renforcer sa rentabilité et affiner son positionnement face à la concurrence.
+                            </p>
+                            <p>
+                                Pour répondre aux attentes d'une clientèle de plus en plus sensible aux enjeux environnementaux, vous envisagez d'adopter une plus éco-responsable. L'entreprise souhaite ainsi élargir son offre avec des produits plus respectueux de l'environnement, pour lesquels les consommateurs disposeraient à investir davantage, tout en explorant d'autres stratégies durables et innovantes.
+                            </p>
+                        </div>
+
+                    </section> 
+                    <section><!-- CONTEXTE-->
+                        <div class="CONTEXTE">
+
+                            <div class="context">
+
+
+                                <p>
+                                    Pour cette mission, l’objectif est d’exploiter efficacement la base de données de l’entreprise <b>KDou</b> afin de fournir des analyses et des indicateurs utiles à la prise de décision. Les informations stockées dans cette base de données contiennent de précieuses données opérationnelles, financières, et commerciales, permettant de mieux comprendre les dynamiques internes de l'entreprise et d'identifier des pistes d'amélioration ou des opportunités.
+                                </p>
+
+                            </div>
+                            <div class="container_video">
+                                <video loop src="video/exel_pre.mov" autoplay muted width="300" >Exel</video>
+                            </div>
+                        </div>
+                        <div class="utilisation">
+                            <p>
+                                Le logiciel Low Code Access simplifie l'extraction et la visualisation de données, même pour les novices en programmation, réduisant ainsi les erreurs. Il permet de :                        </p>
+                            <ol>
+                                <li> <b>Suivre la performance :</b> grâce aux KPI sur les ventes, la production, et les RH.</li>
+
+                                <li> <b>Optimiser les processus :</b> en identifiant les inefficacités et le gaspillage.</li>
+
+                                <li> <b>Prendre des décisions stratégiques :</b> avec des analyses claires et exploitables.</li>
+
+                            </ol>
+                            <p>
+                                Comprendre la structure de la base de données KDou est essentiel pour créer des requêtes pertinentes adaptées aux objectifs de l’entreprise.
+                            </p>
+                        </div>
+                        <div class="struct_base">
+                            <div class="h3_ABD"><h3>Structure de la base Kdou </h3></div>
+                            <p><code><u>clé primaire</u></code> souligner , <code><i>clé étrangère</i></code>  italique</p>
+                            <table class="struct_exel">
+                                <tr class="attribut">
+                                    <td>Fournisseur</td>
+                                    <td>Produit</td>
+                                    <td>Catégorie</td>
+                                    <td>Clientèle</td>
+                                    <td>Commande</td>
+                                    <td>DétailCommande</td>
+                                </tr>
+                                <tr>
+                                    <td><ul><code>
+                                        <li><u>N° fournisseur</u></li>
+                                        <li>Société</li>
+                                        <li>Contact</li>
+                                        <li>Fonction</li>
+                                        <li>Adresse</li>
+                                        <li>Ville</li>
+                                        <li>Région</li>
+                                        <li>Code postal</li>
+                                        <li>Pays</li>
+                                        <li>Téléphone</li>
+                                    </code></ul></td>
+
+                                    <td><ul><code>
+                                        <li><u>Réf produit</u></li>
+                                        <li><i>N° fournisseur</i></li>
+                                        <li><i>Code catégorie</i></li>
+                                        <li>Nom du produit</li>
+                                        <li>Quantité par unité</li>
+                                        <li>Prix unitaire</li>
+                                        <li>Unités en stock</li>
+                                    </code></ul></td>
+
+                                    <td><ul><code>
+                                        <li><u>Code catégorie</u></li>
+                                        <li>Nom de catégorie</li>
+                                        <li>Description</li>
+                                    </code></ul></td>
+
+                                    <td><ul><code>
+                                        <li><u>Code client</u></li>
+                                        <li>Société</li>
+                                        <li>Contact</li>
+                                        <li>Adresse</li>
+                                        <li>Ville</li>
+                                        <li>Code postal</li>
+                                        <li>Pays</li>
+                                        <li>Téléphone</li>
+                                    </code></ul></td>
+
+                                    <td><ul><code>
+                                        <li><u>N° commande</u></li>
+                                        <li><i>Code client</i></li>
+                                        <li>Date commande</li>
+                                        <li>A livrer avant</li>
+                                        <li>Date envoi</li>
+                                        <li>Port</li>
+
+                                    </code></ul> </td>
+
+                                    <td><ul><code>
+                                        <li><u><i>Réf produit</i></u></li>
+                                        <li><u><i>N° commande</i></u></li>
+                                        <li>Prix unitaire</li>
+                                        <li>Quantité</li>
+                                        <li>Remise (%)</li>
+
+                                    </code></ul></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </section>
+                    <section><!-- BILAN-->
+                        <hr>
+                        <h2 class="h2_ABD" >Bilan structuré sur l’étude des données</h2>
+                        <hr>
+                        <div class="base_pres">
+                            <p>La base de données Kdou offre un accès à une variété d'informations essentielles. En effectuant un tri et une analyse de ces données, nous pourrons identifier les éléments les plus pertinents et proposer à Kdou des pistes pour optimiser son organisation. Cette démarche vise à améliorer l'efficacité des processus et à fournir une meilleure structure, permettant ainsi à Kdou d'atteindre plus facilement ses objectifs stratégiques.
+                            Cela apporte un peu plus de clarté et de détail à l'idée d'optimisation de l'organisation. </p>
+                        </div>
+                        <div class="Exemple">
+                            <div class="h3_ABD"><h3>Exemple</h3></div>
+                            <div class="Optimiser">
+                                <p><b><i>"Optimiser la gestion des clients et fournisseurs situés dans la même zone géographique en permettant le
+                                    regroupement potentiel des commandes. Cela permettra à Kdou de réduire les coûts de livraison et de rationaliser
+                                    la logistique."</i></b>
+                                    Cela clarifie le message en soulignant l'objectif principal de réduction des coûts par l'optimisation logistique.
+                                    Ces informations donnent un aperçu de la répartition internationale des fournisseurs et des types de contacts, ce qui pourrait influencer les relations commerciales et logistiques.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="exemple_1">
+                            <div class="client">
+                                <ul>
+                                    3 clients  Nantais
+                                    <li><i>Pedro's house</i></li>
+                                    <li><i>Table nantaise</i></li>
+                                    <li><i>Verre à soi</i></li>
+                                </ul>
+                                <ul>
+                                    5 clients de la regions Parisienne
+                                    <li><i>Chez Bouxou</i></li>
+                                    <li><i>Speedy plate</i></li>
+                                    <li><i>ChefFamilla</i></li>
+                                    <li><i>Une petite faim</i></li>
+                                    <li><i>Crêperie de la gare</i></li>
+                                </ul>
+                                <ul>
+                                    7 fournisseurs en Amérique du Nord
+                                    <li><i>Shelley Burke</i></li>
+                                    <li><i>Regina Murphy</i></li>
+                                    <li><i>Cheryl Saylor</i></li>
+                                    <li><i>Robb Merchant</i></li>
+                                    <li><i>Jean-Guy Lauzon</i></li>
+                                    <li><i>Chantal Goulet</i></li>
+                                    <li><i>Hug Jhonson</i></li>
+
+                                </ul>
+                            </div>
+                            <div class="carousel_container">
+                                <div class="menu_carousel">
+                                    <img src="images/mission_1/exemple_nantes.png" alt="exemple_nantes">
+                                    <img src="images/mission_1/exemple_paris.png" alt="exemple_paris">
+                                    <img src="images/mission_1/exemple amerique du nord.png"  alt="exemple amerique du nord" >
+                                    <img src="images/mission_1/exemple_nantes.png" alt="exemple_nantes">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exemple_2">
+                            <div class="Optimiser">
+                                <p>
+                                    L'analyse des commandes met en lumière des tendances intéressantes dans le comportement d'achat de certains groupes de clients, en révélant notamment leurs préférences, les types de produits qu'ils privilégient et la fréquence de leurs achats. De plus, cette étude permet de mieux comprendre la diversité des produits proposés et d'identifier ceux qui suscitent le plus d'intérêt, favorisant ainsi l'optimisation de l'offre et une adaptation plus précise aux attentes des clients.
+                                </p>
+                                <div class="accordeon_abd">
+                                    <div class="accordeon_abdel-item">
+                                        <input type="checkbox" id="accordeon1" class="accordeon_abdel-checkbox">
+                                        <label for="accordeon1" class="accordeon_abdel-toggle">
+                                            Client "Mikal Torin" (Code PAVBO)
+                                        </label>
+                                        <div class="accordeon_abdel-content">
+                                            <p>Ce client montre une activité d’achat significative. Par exemple, pour la commande 11110, il a commandé en grande quantité des produits variés comme l'Aniseed Syrup (condiment) et le Boston Crab Meat (poisson et fruits de mer). Cette commande diversifiée en termes de catégorie et d’usage illustre les besoins variés de ce client. D’autres commandes, comme la 11113, montrent un intérêt pour les produits laitiers de haute qualité, tels que la Raclette Courdavault.</p>
+                                            <div class="PAVBO_img">
+                                                <img src="images/mission_1/Produit_PAVBO.png" alt="Produit commander pas Mikal Torin">
+                                            </div>
+                                    </div>
+                                    </div>
+                                    <div class="accordeon_abdel-item">
+                                        <input type="checkbox" id="accordeon2" class="accordeon_abdel-checkbox">
+                                        <label for="accordeon2" class="accordeon_abdel-toggle">
+                                            Disparités de consommation selon les catégories
+                                        </label>
+                                        <div class="accordeon_abdel-content">
+                                            <p>Les commandes révèlent une forte demande pour les produits de "Pâtes et céréales", avec des commandes régulières de Wimmers gute Semmelknödel, un produit populaire dans cette catégorie. À l’inverse, certains produits, notamment certains condiments, sont commandés de façon plus ponctuelle.</p>
+                                            <div class="pate_et_tcerealz_img">
+                                                <img src="images/mission_1/Pate&cereal.png" alt="Les commandes révèlent une forte demande pour les produits de Pâtes et céréales">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordeon_abdel-item">
+                                        <input type="checkbox" id="accordeon3" class="accordeon_abdel-checkbox">
+                                        <label for="accordeon3" class="accordeon_abdel-toggle"> 
+                                            Origine et spécialités des produits 
+                                        </label>
+                                        <div class="accordeon_abdel-content">
+                                            <div class="neness_container">
+                                                <div class="neness_img">
+                                                    <img src="images/mission_1/neness.png" alt="Origine et spécialités des produits">
+                                                </div> 
+                                                <p>Certains produits sont typiques de pays spécifiques. Les produits suédois, par exemple, incluent des spécialités comme le Knäckebrod Kala et le Röd Kaviar. Ces produits ethniques ajoutent de la diversité à l'offre et répondent probablement aux préférences d’une clientèle internationale ou connaisseuse de produits étrangers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordeon_abdel-item">
+                                        <input type="checkbox" id="accordeon4" class="accordeon_abdel-checkbox">
+                                        <label for="accordeon4" class="accordeon_abdel-toggle">
+                                            Clients sans commandes
+                                        </label>
+                                        <div class="accordeon_abdel-content">
+                                            <p>Sur les clients enregistrés, six n’ont jamais passé de commande. Cette absence peut signaler des opportunités manquées ou un besoin de relancer ces client(e)s pour accroître leur fidélisation.</p>
+                                            <ol>
+                                                <li><b>L'Atelier des Augustins</b> - Contact : Isra Dubois</li>
+                                                <li><b>Auberge de l'Île Barbe</b> - Contact : Melvin Thiot</li>
+                                                <li><b>Le 7ème Continent</b> - Contact : Abdel Duroc</li>
+                                                <li><b>Riz de Caen</b> - Contact : André Fonseca</li>
+                                                <li><b>La Table du Gourmet</b> - Contact : Mariciée Gilles</li>
+                                                <li><b>Le Petit Hôtel du Grand Large</b> - Contact : Martin Fos</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section><!--AMELIORATION-->
+                        <hr>
+                        <h2 class="h2_ABD">Perspective d'amélioration </h2>
+                        <hr>
+                        <p></p>
+                        <div class="slider_general_abd">
+                            <div class="bouton_abd">
+                                <label for="slide_abd_1"></label>
+                                <label for="slide_abd_2"></label>
+                                <label for="slide_abd_3"></label>
+                                <label for="slide_abd_4"></label>
+                            </div>
+                            <div class="les_slides_abd">
+                                <input class="slide_input_abd" id="slide_abd_1" type="radio" name="slidesss_abd" checked />
+                                <div class="la_slide_abd">
+                                    <div class="slide_img_abd">
+                                        <img src="images/mission_1/analyse.png" alt="analyse">
+                                    </div>
+                                    <h4> Analyse des raisons de l'absence de commandes</h4>
+                                    <p>
+                                        Identifier les raisons pour lesquelles certains clients n’ont pas commandé permettrait d'adapter l’offre à leurs attentes.
+                                    </p>
+                                </div>
+                        
+                                <input class="slide_input_abd" id="slide_abd_2" type="radio" name="slidesss_abd"  />
+                                <div class="la_slide_abd">
+                                    <div class="slide_img_abd">
+                                        <img src="images/mission_1/automatisation.png" alt="automatisation">
+                                    </div>
+                                    <h4>Automatisation des relances </h4>
+                                    <p>
+                                        Un système de relance automatisé permettrait de cibler régulièrement les clients inactifs avec des offres et promotions personnalisées, adaptées à leurs besoins.
+                                    </p>
+                                </div>
+                        
+                                <input class="slide_input_abd" id="slide_abd_3" type="radio" name="slidesss_abd"  />
+                                <div class="la_slide_abd">
+                                    <div class="slide_img_abd">
+                                        <img src="images/mission_1/personalisation.png" alt="personalisation">
+                                    </div>
+                                    <h4>Personnalisation des offres</h4>
+                                    <p>
+                                        Des campagnes personnalisées basées sur les données clients peuvent encourager les inactifs à commander.
+                                    </p>
+                                </div>
+                        
+                                <input class="slide_input_abd" id="slide_abd_4" type="radio" name="slidesss_abd"  />
+                                <div class="la_slide_abd">
+                                    <div class="slide_img_abd">
+                                        <img src="images/mission_1/évolution.png" alt="évaluation">
+                                    </div>
+                                    <h4>Suivi et amélioration continue</h4>
+                                    <p>Exploiter les données des clients inactifs pour personnaliser les offres peut les encourager à passer leur première commande.</p>
+                                </div>
+                            </div> 
+                        </div>
+                        
+                    </section>
+                    <section><!--CONCLUSION-->
+                        <hr>
+                        <h2 class="h2_ABD" >Conclusion</h2>
+                        <hr>
+                        <div class="conlcusion">
+                            <p>
+                                L’analyse des données met en évidence des pistes d’amélioration pour la gestion des stocks, des remises, des délais de livraison et des relations clients. En optimisant le suivi des stocks avec des alertes, en ajustant les remises pour maximiser la rentabilité, et en surveillant les délais pour améliorer la ponctualité des livraisons, l’entreprise pourrait accroître son efficacité. De plus, en adaptant ses offres pour les clients fidèles et en centralisant les données dans un tableau de bord, elle disposerait d'une vue d’ensemble pour des décisions plus éclairées et des stratégies mieux alignées sur les tendances du marché.
+                            </p> 
+                        </div>
+                        
+                    </section>
+            </section>
+            <div class="fin_abd"><i>Page réalisée entièrement par GHANEMI Abdelhafid</i></p></div><p>
+        </main>          
+        <!-- Pied de page -->
+        <div class="footer_abd">
+            <footer >
+                <p>&copy; 2024 - SAE Abdel Farah Anastasia Adam- Tous droits réservés.</p>
+            </footer>
+        </div>
+    </body>
+</html>

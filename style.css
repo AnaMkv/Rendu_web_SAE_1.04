@@ -1,0 +1,1977 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+/* FARAH: partie Accueil*/
+/* Style général */
+body {
+
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    background-color: #999999;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans", Noto S, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    background-attachment: fixed; /* Fixe l'image en place pour une meilleure qualité */
+
+
+}
+
+/* Titres */
+h1 {
+    color: rgb(100, 64, 64) ;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 38px;
+}
+
+
+.navigation nav {
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    background-color: rgb(251, 251, 251);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    height: 120px;
+}
+
+.img_NAV {
+    margin-right: auto; /* Aligne l'image à gauche */
+
+}
+
+.img_NAV > img {
+    height: 120px;
+    width: auto;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin: 0 10px;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.navigation li:hover {
+    background-color: #dcdcdc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navigation a {
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+}
+
+/* Styles pour le menu hamburger */
+.burger-icon {
+    display: none; /* Caché par défaut */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#burger-toggle {
+    display: none;
+}
+
+/* Affiche le menu comme une barre de navigation pour les écrans plus larges */
+.menu_nav {
+    display: flex;
+}
+
+.Page_accueil{
+    max-width: 75%;
+    max-height: 100vh; /* Limite la hauteur de .Abdel_pages pour permettre le défilement interne */
+    margin: 10px auto;
+    padding: 20px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    overflow-y: auto; /* Permet le défilement vertical uniquement dans .Abdel_pages */
+
+}
+
+.image-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+}
+
+
+
+.MEMBRES {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border-radius: 50px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+.MEMBRES q {
+    color: rgba(43, 53, 2, 0.8);
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    gap:70px; /* Espace entre les tables */
+
+    margin: 20px 0;
+   
+    
+    flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
+}
+
+
+.Abdel, .Farah, .Anastasia, .Adam{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: inline-block;
+    flex-direction: column; /* Pour empiler le contenu des cellules verticalement */
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.Abdel:hover, .Farah:hover, .Anastasia:hover, .Adam:hover {
+    transform:scale(1.05);
+}
+.prenoms td>img {
+    border-radius: 15px;
+    height: 220px;
+    width: auto;
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
+}
+.MEMBRES .Description {
+    font-size: 12px;
+}
+
+.Membres td, .Age td {
+    text-align: center;
+}
+
+.Description {
+    text-align: justify;
+}
+
+.MISSION h2 {
+    color: rgba(43, 53, 2, 0.8);
+    text-align : center;
+    margin: 20px;
+}
+
+#MISSIONquote {
+    font-style: italic;
+    margin: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(104, 12, 12);
+}
+
+.MISSIONDesc {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.MISSIONDesc img {
+    height: 300px;
+    width: auto;
+    margin: 20px;
+    margin-left: 40px;
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
+}
+
+.MISSIONDescP-container {
+    display: flex;
+    flex-direction: column; /* Aligns paragraphs in a column */
+    text-align: justify;
+    font-size: 15px;
+    margin-left: 30px;
+    margin-right:50px;
+    padding : 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+}
+
+
+
+
+/*************************************************************ABDELHAFID: mission 1
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************
+************************************************************************************/
+
+
+
+.Abdel_pages {
+    max-width: 75%;
+    max-height: 100vh; /* Limite la hauteur de .Abdel_pages pour permettre le défilement interne */
+    margin: 10px auto;
+    padding: 20px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    overflow-y: auto; /* Permet le défilement vertical uniquement dans .Abdel_pages */
+}
+
+.h2_ABD{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    margin: 0;
+
+}
+.h3_ABD > h3 {
+    border: none;
+    text-align: center;
+    color: rgb(100, 64, 64) ;
+    margin-left: 30px ;
+}
+
+.PRESENTATIONS{
+    background-color: #FFFAFA;
+    display:flex;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    border-radius: 15px;
+
+}
+.Presentation  {
+    align-items: center;
+    margin: auto 10px;
+
+}
+
+.img_kdou{
+    margin: auto 10px;
+    height: 100%;
+    width: 100%;
+}
+.img_kdou > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    transition: transform .1s;
+}
+
+.img_kdou > img:hover{
+
+    transform: scale(1.05);
+    }
+
+.CONTEXTE {
+    display : flex;
+}
+
+.context {
+    background-color: #FFFAFA;  
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: auto 50px ;
+    padding: 10px;
+}
+
+.container_video{
+    display:block;
+    overflow:hidden;
+    margin-right: auto;
+
+}
+
+.container_video video{
+    border-radius: 15px;
+    width:100%;
+    height:100%;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.container_video:hover video{
+    transform:scale(1.05);
+}
+
+
+
+.utilisation {
+    background-color: #FFFAFA;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 30px 50px;
+    padding-left:  20px;
+    padding-right: 20pcx;
+}
+
+
+
+
+.struct_base > p {
+    text-align: right;
+    font-size: 15;
+    margin-right:150px;
+}
+
+.struct_exel {
+    background-color: #FFFAFA;  
+    padding: 5px;
+    margin: auto;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+}
+
+.attribut > td {
+    text-align: center;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
+}
+
+.base_pres {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: #FFFAFA;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 30px;
+    padding: 0 20px;
+}
+
+
+
+.Optimiser{
+    background-color: #FFFAFA;    
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 30px;
+    padding: 0 20px;
+}
+
+.exemple_1 {
+    display: flex;
+    padding: center;
+    margin: 40px;
+}
+
+.client{
+    margin: 0 40px ;
+}
+.client > ul {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    background-color: #FFFAFA;    
+    border-radius: 15px;
+
+
+}
+
+.carousel_container{
+    margin: auto;
+    max-width: 700px;
+    max-height: 500px;
+    overflow: hidden;
+    padding: auto;
+    align-items: center;
+}
+
+.carousel_container .menu_carousel {
+    display: flex;
+    animation: carousel_container 15s infinite ease-in-out;
+
+}
+
+.menu_carousel >img {
+    
+    width: 100%;
+    height: 100%;
+    align-items: center ;
+    border-radius: 15px;
+    
+}
+
+@keyframes carousel_container {
+    0%, 20% {
+        transform: translateX(0);       /* Affiche la première diapositive */
+    }
+    25%, 45% {
+        transform: translateX(-100%);   /* Affiche la deuxième diapositive */
+    }
+    50%, 70% {
+        transform: translateX(-200%);   /* Affiche la troisième diapositive */
+    }
+    75%, 100% {
+        transform: translateX(-300%);   /* Affiche la quatrième diapositive */
+    }
+}
+
+.accordeon_abd {
+    margin-bottom: 20px;
+}
+
+/* Style de base pour l'accordéon */
+.accordeon_abdel {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    padding-bottom: 30px;
+}
+
+  /* Cacher les cases à cocher */
+.accordeon_abdel-checkbox {
+    display: none;
+}
+
+  /* Style du bouton de l'accordéon */
+.accordeon_abdel-toggle {
+    background-color: #a6a6a6;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+    display: block;
+    margin-bottom: 5px;
+    
+}
+
+.accordeon_abdel-toggle:hover {
+    background-color: #dcdcdc;
+}
+
+  /* Contenu de l'accordéon (caché par défaut) */
+.accordeon_abdel-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 0px 15px;
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.accordeon_abdel-content > ol {
+    margin-left: 100px;
+}
+  /* Afficher le contenu lorsque la case est cochée */
+.accordeon_abdel-checkbox:checked + .accordeon_abdel-toggle + .accordeon_abdel-content {
+    max-height: 1000px; /* Ajustez cette valeur en fonction du contenu */
+  }
+
+  .PAVBO_img > img{
+    width: 100%;
+    height: 100%;
+    align-items: center ;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+
+  .pate_et_tcerealz_img > img{
+    width: 100%;
+    height: 100%;
+    align-items: center ;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .neness_container {
+    display: flex;
+
+  }
+  .neness_container > p {
+    margin: 0 30px;
+    margin: auto 15px;
+    padding-left: 10px;
+  }
+
+
+  .neness_img > img {
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    
+  }
+
+
+  .slider_general_abd {
+    display: flex;
+    align-items: center;  /* Centre verticalement */
+    justify-content: center;  /* Centre horizontalement */
+    max-width: 500px;
+    position: relative;  /* Assure que les enfants absolus seront positionnés par rapport à ce parent */
+    margin: auto;
+    height: 450px;
+    overflow: hidden;
+}
+
+.les_slides_abd {
+    display: flex;
+    width: 100%;
+    height: 375px;
+    position: relative;
+
+}
+
+.la_slide_abd {
+    background-color: #cacaca;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;  /* Assure que le contenu est centré verticalement */
+    align-items: center;  /* Centre horizontalement */
+    justify-content: center;  /* Centre verticalement */
+    position: absolute;  /* Positionner les slides en dehors de la vue initiale */
+    left: 100%;  /* Par défaut, en dehors de la zone visible */
+    border-radius: 15px;
+    transition: left 0.65s ease-out;  /* Animation pour le déplacement */
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: auto;
+}
+
+.slide_input_abd {
+    display: none;
+}
+.bouton_abd {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    z-index:  1111;
+}
+
+.bouton_abd label {
+    cursor: pointer;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.bouton_abd label:hover, .bouton_abd label:focus {
+    background: #616161;
+}
+
+.slide_input_abd {
+    display: none;
+}
+
+
+.slide_img_abd {
+    width: 150px;
+    height: 150px;
+
+}
+
+.slide_img_abd > img {
+    margin-top: 7px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius:50% ;
+}
+/* Styles pour montrer les slides quand le bouton est sélectionné */
+#slide_abd_1:checked + .la_slide_abd {
+    left: 0;
+}
+#slide_abd_2:checked + .la_slide_abd {
+    left: 0;
+}
+#slide_abd_3:checked + .la_slide_abd {
+    left: 0;
+}
+#slide_abd_4:checked + .la_slide_abd {
+    left: 0;
+}
+
+
+.conlcusion{
+    padding: 10px;
+    background-color: #FFFAFA;
+    display:flex;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 20px 30px;
+    border-radius: 15px;
+
+}
+
+.fin_abd {
+    text-align: right;
+}
+
+/*ADAM: mission 2*/
+
+
+
+.main_Adam {
+    max-width: 75%;
+    max-height: 100vh; /* Limite la hauteur de .Abdel_pages pour permettre le défilement interne */
+    margin: 10px auto;
+    padding: 20px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    overflow-y: auto; /* Permet le défilement vertical uniquement dans .Abdel_pages */
+
+
+}
+
+.h2_Adam {
+    color: rgb(104, 12, 12);
+}
+
+/* --------------------------------------DEBUT SECTION OBJECTIF------------------------------------- */
+
+.section_objectif {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section_objectif img {
+    width: 28%;
+    height: auto;
+    margin-right: auto;
+    border-radius: 15px; 
+}
+
+.section_objectif div {
+    flex: 1;
+    margin: auto;
+}
+
+/* --------------------------------------FIN SECTION OBJECTIF---------------------------------------- */
+
+/* -------------------------------------- DEBUT SECTION ACCESS ------------------------------------- */
+
+.section_access {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section_access div {
+    width: 67%;
+    height: auto;
+    margin-right: 15px;
+    margin: auto;
+
+}
+
+.section_access img {
+    border-radius: 15px;
+    width: 20% ;
+    height: auto;
+    margin: auto;
+
+}
+
+/* -------------------------------------- FIN SECTION ACCESS ---------------------------------------- */
+
+/* -------------------------------------- DEBUT SECTION PROBLEME -------------------------------------*/
+
+.section_probleme {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section_probleme div {
+    width: 60%;
+    height: auto;
+    margin:auto;
+}
+
+.section_probleme img {
+    width: 20%;
+    height: auto;
+    margin:auto;
+    border-radius: 15px;
+}
+
+/* --------------------------------------FIN SECTION PROBLEME -------------------------------------*/
+
+/* -------------------------------------- DEBUT SECTION AMELIORATION --------------------------------*/
+
+.section_amelio {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section_amelio img {
+    width: 20%;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 15px;
+}
+
+.section_amelio div {
+    flex: 1;
+}
+
+/* -------------------------------------- FIN SECTION AMELIORATION ----------------------------------*/
+
+/* -------------------------------------- DEBUT ACCORDEON ----------------------------------*/
+/* Cacher la case à cocher */
+.accordeon1-checkbox {
+    display: none;
+}
+
+.accordeon1-toggle {
+    background-color: #a6a6a6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    text-align: left;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.accordeon1-toggle:hover {
+    background-color: #dcdcdc;
+}
+
+.accordeon1-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+/* Afficher le contenu quand la case est cochée */
+.accordeon1-checkbox:checked ~ .accordeon1-content {
+    max-height: 300px; 
+}
+/*________________________________________fin accordeon 1 debut du 2__________________________________*/
+
+.accordeon2-checkbox {
+    display: none;
+}
+
+.accordeon2-toggle {
+    background-color: #a6a6a6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    text-align: left;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.accordeon2-toggle:hover {
+    background-color: #dcdcdc;
+}
+
+.accordeon2-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.accordeon2-checkbox:checked ~ .accordeon2-content {
+    max-height: 300px; 
+}
+
+/*________________________________________fin accordeon 2 debut du 3_________________________________*/
+
+.accordeon3-checkbox {
+    display: none;
+}
+
+
+.accordeon3-toggle {
+    background-color: #a6a6a6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    text-align: left;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.accordeon3-toggle:hover {
+    background-color: #dcdcdc;
+}
+
+
+.accordeon3-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.accordeon3-checkbox:checked ~ .accordeon3-content {
+    max-height: 300px;
+}
+
+/*________________________________________fin accordeon 3 debut du 4_________________________________*/
+
+
+.accordeon4-checkbox {
+    display: none;
+}
+
+
+.accordeon4-toggle {
+    background-color: #a6a6a6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    text-align: left;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.accordeon4-toggle:hover {
+    background-color: #dcdcdc;
+}
+
+
+.accordeon4-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+
+.accordeon4-checkbox:checked ~ .accordeon4-content {
+    max-height: 300px;
+}
+
+
+/* -------------------------------------- FIN ACCORDEON ----------------------------------*/
+
+
+
+
+/*ANASTASIA: mission 3*/
+
+.anastasia2 {
+  padding: 15px 0;
+  margin: auto ;
+  width: 90%;
+}
+
+.anastasia2Pres {
+  background-color: #FFFAFA;
+  display:flex;
+  flex-direction: column;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  border-radius: 15px;
+  padding: 15px ;
+  list-style-type: disc;
+  width: 90%;
+
+}
+
+.anastasia2 > div > p {
+  padding: 15px 15px;
+  margin: 10px 10px;
+  text-align: justify;
+  text-indent: 40px;
+}
+
+.anastasia2 article {
+  padding: 15px 0;
+  margin: 10px ;
+}
+
+.anastasia2 img {
+  width: 50%;
+  height: auto;
+}
+
+#superlongheight {
+  width: 20%;
+  height: auto;
+}
+
+#midlongheight{
+  width: 30%;
+  height: auto;
+}
+
+
+/*FARAH MISSION 4*/
+
+
+h3 { 
+    text-align: center;
+    color: #6d0505;
+    border: 2px inset #8d0c0c;
+}
+
+.sommaire {
+    display: flex;                
+    gap: 40px;                
+    margin-top: 20px; 
+    flex-direction: row-reverse;            
+}
+.aside_frh {
+    width: 30%;
+    position: fixed;
+    
+}
+
+.aside_frh > ul > li{
+    border-radius: 15px;
+}
+
+.chapter {
+    flex: 1;                  /* Chaque chapitre occupe un espace égal */
+    padding: 20px;
+    flex-direction: column;
+
+}
+
+
+.developpement {
+    max-width: 65%;
+    max-height: 100vh; /* Limite la hauteur de .Abdel_pages pour permettre le défilement interne */
+    margin: 15px auto 15px 15px;
+    padding: 20px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    overflow-y: auto; /* Permet le défilement vertical uniquement dans .Abdel_pages */
+
+    
+
+}
+
+
+.sommaire ul:first-child {
+    list-style-type: none;     /* Retirer les puces */
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow:  1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sommaire li {
+    margin-bottom: 10px;
+
+}
+
+.sommaire a {
+    text-decoration: none;
+    color: #070707;
+}
+
+.sommaire a:hover {
+    color: #8d0c0c;
+}
+
+/* Pour un défilement fluide */
+html {
+    scroll-behavior: smooth;
+}
+
+.WEB {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px;
+}
+.WEB img {
+    height: 270px;
+    width: auto;
+    margin : 25px;
+    box-shadow: 1px 1px 3px rgb(52, 0, 0);
+}
+
+.WEBDESC {
+    display: flex;
+    flex-direction: column; /* Aligne les paragraphes en colonne */
+    text-align: justify;
+    margin-right: 30px;
+    margin-top : 10px;
+    font-size: 16px;
+}
+
+#WebQuote {
+    font-style: italic;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+#WebQuote a{
+    color : rgb(104, 12, 12);
+}
+
+.consignesWEB p{
+    margin-left : 30px;
+    margin-right: 30px;
+   
+    padding : 10px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.OUTILS {
+    display: flex;  /* Utilisation de Flexbox pour aligner les éléments horizontalement */
+    justify-content: space-between;  /* Distribution égale des tables dans l'espace disponible */
+    gap: 20px;  /* Espacement entre les tables */
+    flex-wrap: wrap;  /* Permet aux tables de s'adapter à l'écran en se mettant sur une nouvelle ligne si nécessaire */
+    margin-top: 50px;
+}
+
+.tableTrans {
+    flex: 1;  
+    width: 900px;  
+    height: 400px;  
+    overflow: hidden;  
+    transition: transform 0.3s ease-in-out;  
+}
+
+.tableTrans:hover {
+    transform: scale(1.1);  
+}
+
+/*CAROUSELLE 1*/
+.chapter > h3 {
+    margin-bottom: 0;
+}
+.slider_frh_abd {
+    align-items: center;
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+    height: 480px;
+    overflow: hidden;
+    box-shadow:  3px 3px 3px  rgb(97, 5, 5);
+    padding : 10px;
+}
+
+.bouton {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    z-index:  1111;
+}
+
+.bouton label {
+    border: 1px solid black;
+    cursor: pointer;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.bouton label:hover, .bouton label:focus {
+    background: #616161;
+}
+
+.slide_input {
+    display: none;
+}
+
+.slide_frh_abd {
+    background-color: #cacaca;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Par défaut, en dehors de la zone visible */
+    width: 100%;
+    height: 100%;
+    transition: left 0.65s ease-out;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.DescriptionBalise > td {
+    max-width: 90%; /* Assure que le texte reste dans les limites */
+    font-size: 16px;
+    overflow: hidden; /* Cache tout débordement */
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    word-wrap: break-word; /* Force le retour à la ligne en cas de mots longs */
+    margin: auto;
+}
+/* Styles pour montrer les slides quand le bouton est sélectionné */
+#slide_frh_1:checked + .slide_frh_abd {
+    left: 0;
+}
+#slide_frh_2:checked + .slide_frh_abd {
+    left: 0;
+}
+#slide_frh_3:checked + .slide_frh_abd {
+    left: 0;
+}
+#slide_frh_4:checked + .slide_frh_abd {
+    left: 0;
+}
+#slide_frh_5:checked + .slide_frh_abd {
+    left: 0;
+}
+#slide_frh_6:checked + .slide_frh_abd {
+    left: 0;
+}
+#slide_frh_7:checked + .slide_frh_abd {
+    left: 0;
+}
+#slide_frh_8:checked + .slide_frh_abd {
+    left: 0;
+}
+
+
+.DOCTYPE, .HTML, .BODY, .MAIN, .ARTICLE, .ID, .CLASS, .HEAD {
+    display: flex;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    
+}
+
+.img_slide_frh > img {
+    margin-left :120px;
+    margin-bottom: 10px;
+    height: 250px;
+    width: 250px;
+  
+    
+}
+
+
+/* Réglage pour la navigation manuelle */
+.nav-buttons label {
+    display: block;
+}
+
+
+
+label {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.NomBalise td {
+    color: rgb(104, 12, 12);
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* Conteneur principal pour les tableaux */
+.insertion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Style de base pour chaque élément de l'accordéon */
+.accordeon_insertion-item {
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Cacher les cases à cocher */
+.accordeon_insertion-checkbox {
+    display: none;
+}
+
+/* Style du bouton de l'accordéon */
+.accordeon_insertion-toggle {
+    background-color: #a6a6a6;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.9s;
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+/* Changer la couleur du bouton au survol */
+.accordeon_insertion-toggle:hover {
+    background-color: #dcdcdc;
+}
+
+/* Ajouter la flèche */
+.arrow {
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease; /* Transition pour faire tourner la flèche */
+}
+
+/* Contenu de l'accordéon (caché par défaut) */
+.accordeon_insertion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-out;
+    padding: 0px 15px;
+    background-color: #f4f4f4;
+}
+
+/* Afficher le contenu lorsque la case est cochée */
+.accordeon_insertion-checkbox:checked + .accordeon_insertion-toggle + .accordeon_insertion-content {
+    max-height: 1000px; /* Ajustez cette valeur si nécessaire */
+}
+
+/* Faire tourner la flèche lorsque la case est cochée */
+.accordeon_insertion-checkbox:checked + .accordeon_insertion-toggle .arrow {
+    transform: rotate(180deg); /* Rotation de la flèche de 180° */
+}
+
+
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(62, 62, 62);
+    color: white;
+    margin-top: 20px;
+}
+
+
+
+
+
+/*___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________
+___________________________________________________________________________*/
+
+
+
+
+/* Pour les écrans petits (<768px) */
+@media (max-width: 767px) {
+
+/*ACCUEIL*/
+
+    /* Masquer le menu par défaut et définir son style pour le mobile */
+    .menu_nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px; /* Ajuster en fonction de la hauteur du header */
+        left: 0;
+        width: 100%;
+        background-color: rgb(251, 251, 251);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease; /* Transition douce */
+    }
+
+    /* Afficher le menu avec animation lorsque le burger est coché */
+    #burger-toggle:checked ~ .menu_nav {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0); /* Faire glisser vers le bas en douceur */
+    }
+
+    /* Style de l'icône hamburger */
+    .burger-icon {
+        border-radius: 15px;
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: 20px;
+        color: #333;
+        transition: color 0.3s ease;
+        z-index: 10000;
+    }
+
+    /* Changement de couleur au survol de l'icône burger */
+    .burger-icon:hover {
+        color: #555;
+    }
+
+    /* Style des éléments individuels du menu */
+    .menu_nav li {
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        z-index: 9999;
+        }
+
+    /* Suppression de la bordure pour le dernier élément */
+    .menu_nav li:last-child {
+        border-bottom: none;
+    }
+
+    /* Effet au survol pour les éléments du menu */
+    .menu_nav li:hover {
+        background-color: #f0f0f0;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style des liens */
+    .menu_nav a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Effet actif sur les liens */
+    .menu_nav li a:hover {
+        color: #555;
+    }
+
+    .container2 {
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+    .MISSIONDesc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Abdel, .Farah, .Anastasia, .Adam {
+        width: 45%; /* Moins large sur les grands écrans */
+        justify-content: center; /* Centrer et espacer uniformément les tables */
+        width: 100%; /* S'assure qu'il prend toute la largeur de la page */
+        max-width: 400px; /* Largeur maximale pour empêcher les débordements */
+        margin: 0;
+    }
+
+/*MISSION 1*/
+    .Abdel_pages{
+        width: 100%;
+    }
+    .PRESENTATIONS{
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+
+    .CONTEXTE{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .context{
+        width: 90%;
+    }
+
+    .struct_base {
+        display: none;
+    }
+    
+    .exemple_1{
+        flex-direction: column;
+        align-items: center;
+    }
+    .neness_img > img{
+        display: none;
+    }
+    .accordeon_abdel-content > ol {
+        margin-left: 10px;
+    }
+    .fin_abd{
+        text-align: right;
+        font-size: 10px;
+    }
+
+
+    .main_Adam {
+        width: 100%; /* Prend toute la largeur du conteneur */
+        padding: 15px;
+        margin: auto;
+    }
+
+    .section_objectif,
+    .section_access,
+    .section_probleme,
+    .section_amelio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section_objectif img,
+    .section_access img,
+    .section_probleme img,
+    .section_amelio img {
+        display: None;
+    }
+
+    .section_access div,
+    .section_probleme div,
+    .section_amelio div {
+        width: 100%;
+    }
+/* MISSION 4 */
+
+    .developpement {
+        max-width: 75%;
+        margin: 10px auto;
+        padding:5px ;
+    }
+    .WEB {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px;
+    }
+
+    .WEB img {
+        height: 270px;
+        width: auto;
+        margin: 25px 0; 
+        box-shadow: 1px 1px 3px rgb(52, 0, 0);
+    }
+
+    .WEBDESC {
+        text-align: justify;
+        font-size: 16px;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .DescriptionBalise {
+        width: 100%; /* Assure que l'élément prend toute la largeur disponible */
+        display: flex;
+        justify-content: center; /* Centre le contenu horizontalement */
+    }
+    
+    .DescriptionBalise > td {
+        max-width: 80%; /* Limite la largeur à 90% pour éviter les débordements */
+        white-space: normal; /* Permet le retour à la ligne si nécessaire */
+        overflow: hidden; /* Cache tout texte dépassant */
+        text-overflow: ellipsis; /* Ajoute "..." si le texte dépasse */
+        font-size: 16px;
+        text-align: center; /* Centre le texte à l'intérieur de la cellule */
+        padding: 5px; /* Ajoute un peu d'espace autour du texte */
+        box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+        word-wrap: break-word; /* Retour à la ligne en cas de mots longs */
+    }
+    
+    .aside_frh {
+        display: none;
+    }
+}
+/* Pour les écrans moyens (768px à 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    
+/*ACCUEIL*/
+
+    /* Masquer le menu par défaut et définir son style pour le mobile */
+    .menu_nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px; /* Ajuster en fonction de la hauteur du header */
+        left: 0;
+        width: 100%;
+        background-color: rgb(251, 251, 251);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease; /* Transition douce */
+    }
+
+    /* Afficher le menu avec animation lorsque le burger est coché */
+    #burger-toggle:checked ~ .menu_nav {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0); /* Faire glisser vers le bas en douceur */
+    }
+
+    /* Style de l'icône hamburger */
+    .burger-icon {
+        border-radius: 15px;
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: 20px;
+        color: #333;
+        transition: color 0.3s ease;
+        z-index: 10000;
+    }
+
+    /* Changement de couleur au survol de l'icône burger */
+    .burger-icon:hover {
+        color: #555;
+    }
+
+    /* Style des éléments individuels du menu */
+    .menu_nav li {
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        z-index: 9999;
+        }
+
+    /* Suppression de la bordure pour le dernier élément */
+    .menu_nav li:last-child {
+        border-bottom: none;
+    }
+
+    /* Effet au survol pour les éléments du menu */
+    .menu_nav li:hover {
+        background-color: #f0f0f0;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style des liens */
+    .menu_nav a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Effet actif sur les liens */
+    .menu_nav li a:hover {
+        color: #555;
+    }
+
+    .container2 {
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+    .MISSIONDesc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Abdel, .Farah, .Anastasia, .Adam {
+        width: 45%; /* Moins large sur les grands écrans */
+        justify-content: center; /* Centrer et espacer uniformément les tables */
+        width: 100%; /* S'assure qu'il prend toute la largeur de la page */
+        max-width: 400px; /* Largeur maximale pour empêcher les débordements */
+        margin: 0;
+    }
+
+/*MISSION 1*/
+    .Abdel_pages{
+        width: 100%;
+    }
+    .PRESENTATIONS{
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+
+    .CONTEXTE{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .context{
+        width: 90%;
+    }
+
+    .struct_base {
+        display: none;
+    }
+    
+    .exemple_1{
+        flex-direction: column;
+        align-items: center;
+    }
+    .neness_img > img{
+        display: none;
+    }
+    .accordeon_abdel-content > ol {
+        margin-left: 10px;
+    }
+    .fin_abd{
+        text-align: right;
+        font-size: 10px;
+    }
+
+
+    .main_Adam {
+        width: 100%; /* Prend toute la largeur du conteneur */
+        padding: 15px;
+        margin: auto;
+    }
+
+    .section_objectif,
+    .section_access,
+    .section_probleme,
+    .section_amelio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section_objectif img,
+    .section_access img,
+    .section_probleme img,
+    .section_amelio img {
+        display: None;
+    }
+
+    .section_access div,
+    .section_probleme div,
+    .section_amelio div {
+        width: 100%;
+    }
+/* MISSION 4 */
+
+    .developpement {
+        max-width: 75%;
+        margin: 10px auto;
+        padding:5px ;
+    }
+    .WEB {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px;
+    }
+
+    .WEB img {
+        height: 270px;
+        width: auto;
+        margin: 25px 0; 
+        box-shadow: 1px 1px 3px rgb(52, 0, 0);
+    }
+
+    .WEBDESC {
+        text-align: justify;
+        font-size: 16px;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .DescriptionBalise {
+        width: 100%; /* Assure que l'élément prend toute la largeur disponible */
+        display: flex;
+        justify-content: center; /* Centre le contenu horizontalement */
+    }
+    
+    .DescriptionBalise > td {
+        max-width: 80%; /* Limite la largeur à 90% pour éviter les débordements */
+        white-space: normal; /* Permet le retour à la ligne si nécessaire */
+        overflow: hidden; /* Cache tout texte dépassant */
+        text-overflow: ellipsis; /* Ajoute "..." si le texte dépasse */
+        font-size: 16px;
+        text-align: center; /* Centre le texte à l'intérieur de la cellule */
+        padding: 5px; /* Ajoute un peu d'espace autour du texte */
+        box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+        word-wrap: break-word; /* Retour à la ligne en cas de mots longs */
+    }
+    
+    .aside_frh {
+        display: none;
+    }
+}
+
+/* Pour les écrans grands (992px à 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /*ACCUEIL*/
+
+    /* Masquer le menu par défaut et définir son style pour le mobile */
+    .menu_nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px; /* Ajuster en fonction de la hauteur du header */
+        left: 0;
+        width: 100%;
+        background-color: rgb(251, 251, 251);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease; /* Transition douce */
+    }
+
+    /* Afficher le menu avec animation lorsque le burger est coché */
+    #burger-toggle:checked ~ .menu_nav {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0); /* Faire glisser vers le bas en douceur */
+    }
+
+    /* Style de l'icône hamburger */
+    .burger-icon {
+        border-radius: 15px;
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: 20px;
+        color: #333;
+        transition: color 0.3s ease;
+        z-index: 10000;
+    }
+
+    /* Changement de couleur au survol de l'icône burger */
+    .burger-icon:hover {
+        color: #555;
+    }
+
+    /* Style des éléments individuels du menu */
+    .menu_nav li {
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        z-index: 9999;
+        }
+
+    /* Suppression de la bordure pour le dernier élément */
+    .menu_nav li:last-child {
+        border-bottom: none;
+    }
+
+    /* Effet au survol pour les éléments du menu */
+    .menu_nav li:hover {
+        background-color: #f0f0f0;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style des liens */
+    .menu_nav a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Effet actif sur les liens */
+    .menu_nav li a:hover {
+        color: #555;
+    }
+
+    .container2 {
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+    .MISSIONDesc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Abdel, .Farah, .Anastasia, .Adam {
+        width: 45%; /* Moins large sur les grands écrans */
+        justify-content: center; /* Centrer et espacer uniformément les tables */
+        width: 100%; /* S'assure qu'il prend toute la largeur de la page */
+        max-width: 400px; /* Largeur maximale pour empêcher les débordements */
+        margin: 0;
+    }
+
+/*MISSION 1*/
+    .Abdel_pages{
+        width: 100%;
+    }
+    .PRESENTATIONS{
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+
+    .CONTEXTE{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .context{
+        width: 90%;
+    }
+
+    .struct_base {
+        display: none;
+    }
+    
+    .exemple_1{
+        flex-direction: column;
+        align-items: center;
+    }
+    .neness_img > img{
+        display: none;
+    }
+    .accordeon_abdel-content > ol {
+        margin-left: 10px;
+    }
+    .fin_abd{
+        text-align: right;
+        font-size: 10px;
+    }
+
+
+    .main_Adam {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 95%;
+    }
+
+    .section_objectif,
+    .section_access,
+    .section_probleme,
+    .section_amelio {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .section_objectif img,
+    .section_access img,
+    .section_probleme img,
+    .section_amelio img {
+        width: 20%;
+        margin: 0 10px;
+    }
+
+    .section_objectif div,
+    .section_access div,
+    .section_probleme div,
+    .section_amelio div {
+        width: 60%;
+    }
+
+    /* MISSION 4 */
+    .WEB {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px;
+    }
+
+    .WEB img {
+        height: 270px;
+        width: auto;
+        margin: 25px 0; 
+        box-shadow: 1px 1px 3px rgb(52, 0, 0);
+    }
+
+    .WEBDESC {
+        text-align: justify;
+        font-size: 16px;
+        margin-right: 0;
+        margin-top: 0;
+    }
+}

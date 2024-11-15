@@ -1,0 +1,501 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- Création de l'en-tête avec une image -->
+
+<!-- Fin de la création de l'en-tête -->
+
+<div class = "navigation">
+  <nav>
+      <div class="img_NAV">
+          <img src="images/KDOU_COMPTE_RENDU_NAV.png" alt="logo de kdou">
+      </div>
+      <input type="checkbox" id="burger-toggle">
+      <label for="burger-toggle" class="burger-icon">☰</label>
+      <ul class="menu_nav">
+          <li><a href="Accueil.html"> ACCUEIL</a></li>
+          <li><a href="Mission_1.html">MISSION 1</a></li>
+          <li><a href="Mission_2.html">MISSION 2</a></li>
+          <li><a href="Mission_3.html">MISSION 3</a></li>
+          <li><a href="Mission_4.html">MISSION 4</a></li>
+      </ul>
+  </nav>
+</div>
+<!-- Contenu principal -->
+<main class="Page_accueil" >
+  <section class="anastasia2">
+    <h1>MISSION 3</h1>
+    <div class="anastasia2Pres">
+      <p>L’objectif de cette troisième mission était, en utilisant le langage SQL, d’ « exploiter la base de données de
+        l’entreprise KDou pour produire des analyses et indicateurs pertinents » (sujet mission 3). Nous venions de
+        commencer la partie du cours de bases de données sur le SQL et il était désormais temps de mettre nos
+        connaissances acquises en pratique, afin de nous entraîner et, par cet exercice appliqué, de consolider nos
+        apprentissages.</p>
+      <p>Nous allions donc devoir utiliser le langage SQL pour récupérer des éléments d’analyses et des indicateurs
+        relatifs aux performances et données de l’entreprise fictive KDou ; et produire, dans un second temps, nos
+        propres
+        requêtes, afin de mettre en lumière des caractéristiques du commerce que nous jugions heuristiques et
+        pertinentes
+        pour l’entreprise.</p>
+      <p>Parmi les indicateurs imposés, nous nous focaliserons sur deux requêtes particulièrement intéressantes pour
+        chaque thème imposé.</p>
+    </div>
+  </section>
+  <section class="anastasia2">
+    <article class="des_boi">
+      <h2>Desserts / Boissons</h2>
+      <ul>
+          <li class="anastasia2Pres">
+            <p><strong>Première requête (1a)</strong> : affichage des produits correspondant à l’une ou l’autre de ces
+              catégories et ayant un prix inférieur ou égal à 50 euros.</p>
+            <ul>
+              <li><p>On effectue une jointure sur le numéro de fournisseur entre les tables Produit et Fournisseur.</p>
+              </li>
+              <li><p>On effectue une jointure sur le code de la catégorie entre la table obtenue par la précédente
+                jointure et la table Categorie.</p></li>
+              <li><p>On restreint notre requête aux tuples dont le prix unitaire est inférieur est inférieur ou égal à
+                50
+                euros et dont le code catégoriel est 1 ou 3 (desserts ou boissons).</p></li>
+              <li><p>On effectue une projection sur le nom du produit, son prix unitaire, son pays de provenance (le
+                pays
+                de son fournisseur), le code de sa catégorie et le nom de sa catégorie.</p></li>
+            </ul>
+            <p>On effectue donc en dernière instance la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT Produit.NomProd, Produit.PrixUnit, Fournisseur.Pays,
+                Categorie.CodeCateg, Categorie.NomCateg <br>
+                FROM (Produit INNER JOIN Fournisseur ON Produit.NoFour =
+                Fournisseur.NoFour) <br>
+                INNER JOIN Categorie ON Categorie.CodeCateg =
+                Produit.CodeCateg <br>
+                WHERE Produit.PrixUnit <= 50 <br>
+                AND (Produit.CodeCateg = 3 OR Produit.CodeCateg = 1);
+              </code>
+            </p>
+            <p>Et nous obtenons la table suivante :</p>
+            <img src="images/mission_3/M3-1a.png" alt="Table résultat">
+            <p>À noter qu’il y avait une erreur dans la requête que nous avions rendue, qui sélectionnait les produits
+              des
+              catégories boissons et desserts ayant un prix <em>supérieur ou égal</em> à 50 euros. </p>
+          </li>
+          <li class="anastasia2Pres">
+            <p><strong>Deuxième requête (1c)</strong> : affichage des chiffres d’affaires respectifs générés par les
+              catégories desserts et boissons.</p>
+            <ul>
+              <li><p>On effectue une jointure sur le code de la catégorie entre les tables Categorie et Produit.</p>
+              </li>
+              <li><p>On effectue une jointure sur la référence du produit entre la table obtenue par la jointure
+                précédente et la table DetailCommande.</p></li>
+              <li><p>On restreint notre requête aux tuples dont le nom de catégorie est « boissons » ou « desserts
+                ».</p>
+              </li>
+              <li><p>On regroupe les tuples par nom de catégorie.</p></li>
+              <li><p>On effectue une projection sur le nom de la catégorie et on calcule le chiffre d’affaire de chacune
+                de ces catégories à l’aide de la fonction d’agrégation Somme (Sum) : on effectue la somme des produits
+                du
+                prix unitaire et de la quantité commandée auxquels on retranche respectivement ce même produit multiplié
+                par la remise.</p></li>
+            </ul>
+            <p>On effectue donc en dernière instance la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT Categorie.NomCateg,
+                Sum([DetailCommande].[PrixUnitCli]*[DetailCommande].[QteCom]
+                -
+                ([DetailCommande].[PrixUnitCli]*[DetailCommande].[QteCom]*[D
+                etailCommande].[Remise])) AS ChiffreDAffaires <br>
+                FROM (Categorie INNER JOIN Produit ON Categorie.CodeCateg =
+                Produit.CodeCateg)
+                INNER JOIN DetailCommande ON Produit.RefProd =
+                DetailCommande.RefProd <br>
+                WHERE Categorie.NomCateg In ('desserts','boissons') <br>
+                GROUP BY Categorie.NomCateg;
+              </code>
+            </p>
+            <p>Et nous obtenons la table suivante :</p>
+            <img src="images/mission_3/M3-1c.png" alt="Table résultat">
+          </li>
+      </ul>
+    </article>
+    <article>
+      <h2>L'offre de KDou</h2>
+      <ul>
+          <li class="anastasia2Pres"><p><strong>Première requête (2a)</strong> : liste des fournisseurs proposant des produits qui ne sont pas
+            commandés actuellement.</p>
+            <ul>
+              <li><p>On effectue une jointure externe gauche sur la référence du produit entre la table Produit et la
+                table DetailCommande.</p></li>
+              <li><p>On effectue une jointure sur le numéro de fournisseur entre la table ainsi obtenue et la table
+                Fournisseur.</p></li>
+              <li><p>On restreint notre requête aux tuples dont le numéro de commande est vide (Null).</p></li>
+              <li><p>On effectue une projection sur la société du fournisseur en éliminant les doublons potentiels
+                (DISTINCT).</p></li>
+              <li><p>On l’ordonne, ici par ordre décroissant.</p></li>
+            </ul>
+            <p>On effectue donc la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT DISTINCT Fournisseur.Societe <br>
+                FROM Fournisseur INNER JOIN (Produit LEFT JOIN
+                DetailCommande ON Produit.RefProd = DetailCommande.RefProd)
+                ON Fournisseur.NoFour = Produit.NoFour <br>
+                WHERE DetailCommande.NoCom Is Null <br>
+                ORDER BY Fournisseur.Societe DESC;
+              </code>
+            </p>
+            <p>Et nous obtenons la table suivante :</p>
+            <img src="images/mission_3/M3-2a.png" alt="Table résultat">
+          </li>
+          <li class="anastasia2Pres"><p><strong>Deuxième requête (2b)</strong> : nombre de produits non-commandés par catégorie.</p>
+            <ul>
+              <li><p>Nous effectuons une jointure sur le code de la catégorie entre les tables Produit et Categorie.</p>
+              </li>
+              <li><p>Nous effectuons une jointure externe gauche sur la référence du produit entre la table ainsi
+                obtenue
+                et la table DetailCommande.</p></li>
+              <li><p>Nous regroupons les tuples par nom de catégorie et numéro de commande.</p></li>
+              <li><p>Nous ne sélectionnons que les regroupements ainsi obtenus dont le numéro de commande est vide
+                (Null).</p></li>
+              <li><p>Nous effectuons une projection sur le nom de la catégorie et on calcule le nombre de produits-non
+                commandés en utilisant la fonction d’agrégation de compte (Count) sur la référence du produit, que l’on
+                renomme NombreDeProduitsNonCommandés.</p></li>
+              <li><p>Nous ordonnons les tuples obtenus par le compte susmentionné, par ordre décroissant.</p></li>
+            </ul>
+            <p>Nous effectuons donc la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT Categorie.NomCateg, Count(Produit.RefProd) AS
+                NombreDeProduitsNonCommandés <br>
+                FROM (Categorie INNER JOIN Produit ON Categorie.CodeCateg =
+                Produit.CodeCateg) <br>
+                LEFT JOIN DetailCommande ON Produit.RefProd =
+                DetailCommande.RefProd <br>
+                GROUP BY Categorie.NomCateg, DetailCommande.NoCom <br>
+                HAVING DetailCommande.NoCom Is Null <br>
+                ORDER BY Count(Produit.RefProd) DESC;
+              </code>
+            </p>
+            <p>Et nous obtenons cette table :</p>
+            <img src="images/mission_3/M3-2b.png" alt="Table résultat">
+          </li>
+      </ul>
+    </article>
+    <article>
+      <h2>La provenance des produits</h2>
+      <ul>
+          <li class="anastasia2Pres">
+            <p><strong>Première requête (2c)</strong> : pays ayant une offre importante de produits.</p>
+            <ul>
+              <li><p>Nous considérons les pays desquels proviennent plus de 10 produits.</p></li>
+              <li><p>Nous effectuons une jointure sur le numéro de fournisseur entre les tables Fournisseur et
+                Produit.</p></li>
+              <li><p>Nous regroupons les tuples par pays de fournisseur.</p></li>
+              <li><p>Nous ne sélectionnons que les regroupements ainsi obtenus ayant un compte de référence de produits
+                (on aurait ici pu choisir un autre attribut) supérieur à 10.</p></li>
+              <li><p>Nous effectuons une projection sur le pays de fournisseur et on utilise la fonction d’agrégation de
+                compte (Count) pour compter les références de produits (même remarque que précédemment) pour chaque
+                pays.</p></li>
+              <li><p>Nous ordonnons les tuples obtenus par le compte susmentionné, par ordre décroissant.</p></li>
+            </ul>
+            <p>Nous effectuons donc la requête SQL suivante :<br></p>
+            <p><code>
+              SELECT Fournisseur.Pays, Count(Produit.RefProd) AS
+              NombreDeProduits <br>
+              FROM Fournisseur INNER JOIN Produit ON Fournisseur.NoFour =
+              Produit.NoFour <br>
+              GROUP BY Fournisseur.Pays <br>
+              HAVING Count("RefProd")>10 <br>
+              ORDER BY Count(Produit.RefProd) DESC;
+            </code></p>
+            <p>Et nous obtenons la table suivante :</p>
+            <img src="images/mission_3/M3-2c.png" alt="Table résultat">
+          </li>
+          <li class="anastasia2Pres">
+            <p><strong>Deuxième requête (3a)</strong> : desserts ou boissons vendus à moins de 100 euros et provenant
+              d’Allemagne.</p>
+            <ul>
+              <li><p>Nous effectuons une jointure sur le code de la catégorie entre les tables Produit et Categorie.</p>
+              </li>
+              <li><p>Nous effectuons une jointure sur le numéro de fournisseur entre la table ainsi obtenue et la table
+                Fournisseur.</p></li>
+              <li><p>Nous restreignons les enregistrements aux seuls tuples dont le pays de fournisseur est l’Allemagne,
+                dont le nom de la catégorie est « Boissons » ou « Desserts » et dont le prix unitaire est strictement
+                inférieur à 100.</p></li>
+              <li><p>Nous effectuons une projection sur le nom du produit.</p></li>
+              <li><p>Nous ordonnons les tuples ainsi obtenus par nom de produit (ici par ordre décroissant).</p></li>
+            </ul>
+            <p>Nous effectuons donc la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT Produit.NomProd <br>
+                FROM Fournisseur <br>
+                INNER JOIN (Produit INNER JOIN Categorie ON
+                Produit.CodeCateg = Categorie.CodeCateg) <br> ON Produit.NoFour =
+                Fournisseur.NoFour <br>
+                WHERE Fournisseur.Pays = "Allemagne" <br>
+                AND (Categorie.NomCateg = "Desserts" OR Categorie.NomCateg =
+                "Boissons") <br>
+                AND Produit.PrixUnit < 100 <br>
+                ORDER BY Produit.NomProd DESC;
+              </code>
+            </p>
+            <p>Et nous obtenons la table suivante :</p>
+            <img src="images/mission_3/M3-3a.png" alt="Table résultat">
+          </li>
+      </ul>
+    </article>
+    <article>
+      <h2>La clientèle</h2>
+      <ul>
+          <li class="anastasia2Pres">
+            <p><strong>Première requête (4a)</strong> : liste des client·es nantais·es qui commandent en Allemagne.</p>
+            <ul>
+              <li><p>Nous effectuons une jointure sur le numéro de fournisseur entre la table fournisseur et la jointure
+                sur le code client des tables Client et Commande.</p></li>
+              <li><p>Nous effectuons une jointure sur le numéro de fournisseur entre la table ainsi obtenue et la
+                jointure
+                sur la référence du produit entre les tables Produit et DetailCommande.</p></li>
+              <li><p>Nous restreignons les enregistrements aux seuls tuples dont la ville du/de la client·e est Nantes
+                et
+                dont le pays du fournisseur est l’Allemagne.</p></li>
+              <li><p>Nous effectuons une projection sur le code client, la ville du/de la client·e et le pays du
+                fournisseur, en éliminant les doublons potentiels (DISTINCT).</p></li>
+            </ul>
+            <p>Nous effectuons donc la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT DISTINCT Client.CodeCli, Client.VilleCli,
+                Fournisseur.Pays <br>
+                FROM Fournisseur INNER JOIN ((Client INNER JOIN Commande ON
+                Client.CodeCli = Commande.CodeCli)
+                INNER JOIN (Produit INNER JOIN DetailCommande ON
+                Produit.RefProd = DetailCommande.RefProd) ON Commande.NoCom
+                = DetailCommande.NoCom) ON Fournisseur.NoFour =
+                Produit.NoFour <br>
+                WHERE (((Client.VilleCli)="Nantes") <br>
+                AND ((Fournisseur.Pays)="Allemagne"));
+              </code>
+            </p>
+            <p>Et nous obtenons la table suivante :</p>
+            <img src="images/mission_3/M3-4a.png" alt="Table résultat">
+          </li>
+          <li class="anastasia2Pres">
+            <p><strong>Deuxième requête (4c)</strong> : liste des client·es qui n’ont pas bénéficié de la remise des 25%
+              de réduction.</p>
+            <ul>
+              <li><p>Nous effectuons une jointure sur le code client entre les tables Client et Commande.</p></li>
+              <li><p>Nous effectuons une différence pour ne pas sélectionner les enregistrements pour lesquels la remise
+                est de 0.25 (25%).</p></li>
+              <li><p>Nous effectuons une projection sur la société cliente en éliminant les doublons potentiels
+                (DISTINCT).</p></li>
+              <li><p>Nous ordonnons les tuples ainsi obtenus par ordre alphabétique croissant pour le nom de la société
+                cliente.</p></li>
+            </ul>
+            <p>Nous effectuons donc la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT DISTINCT Client.SocieteCli <br>
+                FROM Client INNER JOIN Commande ON Client.CodeCli =
+                Commande.CodeCli <br>
+                WHERE NOT EXISTS <br>
+                (SELECT * FROM DetailCommande
+                WHERE DetailCommande.NoCom = Commande.NoCom
+                AND DetailCommande.Remise = 0.25) <br>
+                ORDER BY Client.SocieteCli ASC;
+              </code>
+            </p>
+            <p>Et nous obtenons la table suivante :</p>
+            <p>
+              <code>
+                <img id="superlongheight" src="images/mission_3/M3-4c.png" alt="Table résultat">
+              </code>
+            </p>
+          </li>
+      </ul>
+    </article>
+  </section>
+  <section class="anastasia2">
+    <h2>Requêtes personnelles</h2>
+    <div class="anastasia2Pres">
+      <p>Nous nous focalisons maintenant sur les requêtes personnelles.</p>
+    </div>
+    <article>
+      <ul>
+          <li class="anastasia2Pres">
+            <p><strong>Requête d'Anastasia</strong> : liste de chaque client·e en fonction du chiffre d’affaires qu’il
+              ou
+              elle a généré pour KDou – cela pourrait permettre d’analyser les facteurs qui favorisent la fidélisation
+              des
+              client·es : on pourrait par la suite identifier des caractéristiques spécifiques à ces client·es afin de
+              mieux cibler les futur·es acheteur·ses (avec des publicités ciblées par exemple).</p>
+            <ul>
+              <li><p>Nous effectuons une jointure sur le numéro de commande entre les tables Commande et
+                DetailCommande.</p></li>
+              <li><p>Nous effectuons une jointure sur le code client entre la table ainsi obtenue et la table
+                Client.</p>
+              </li>
+              <li><p>Nous regroupons les tuples par société cliente et contact du/de la client·e.</p></li>
+              <li><p>Nous effectuons une projection sur la société cliente et le contact du/de la client·e, et nous
+                utilisons la fonction d’agrégation Somme (Sum) pour calculer le chiffre d’affaires généré par ce·tte
+                client·e. Cela correspond à la somme des prix unitaires multiplié par les quantités commandées, auxquels
+                on retranche les remises. On ne compte volontairement pas les frais de port dans la mesure où ils sont
+                encaissés en dernière instance par les transporteurs et non par l’entreprise KDou.</p></li>
+              <li><p>Nous ordonnons les tuples ainsi obtenus par ladite somme, dans l’ordre décroissant, afin d’afficher
+                en premier les « plus gros·ses client·es » de KDou.</p></li>
+            </ul>
+            <p>Nous effectuons donc la requête suivante :<br></p>
+            <p>
+              <code>
+                SELECT Client.SocieteCli, Client.ContactCli,
+                Sum([PrixUnitCli]*[QteCom]-[PrixUnitCli]*[QteCom]*[Remise]) AS
+                ArgentDépenséParCeClient <br>
+                FROM Client INNER JOIN (Commande INNER JOIN DetailCommande ON
+                Commande.NoCom = DetailCommande.NoCom) ON Client.CodeCli =
+                Commande.CodeCli <br>
+                GROUP BY Client.SocieteCli, Client.ContactCli <br>
+                ORDER BY Sum(([PrixUnitCli]*[QteCom])-
+                [PrixUnitCli]*[QteCom]*[Remise]) DESC;
+              </code>
+            </p>
+            <p>Nous obtenons cette table :</p>
+            <img src="images/mission_3/Anastasia.png" alt="Table résultat">
+          </li>
+          <li class="anastasia2Pres">
+            <p><strong>Requête de Farah</strong> : détermination des produits les plus vendus afin de permettre à KDou
+              de concentrer son offre là où la demande est la plus importante.</p>
+            <ul>
+              <li>
+                <p><strong>Première requête</strong> :</p>
+                <ul>
+                  <li><p>Nous effectuons une jointure sur la référence du produit entre les tables Produit et
+                    DetailCommande.</p></li>
+                  <li><p>Nous effectuons une jointure sur le numéro de commande entre la table ainsi obtenue et la table
+                    Commande.</p></li>
+                  <li><p>Nous effectuons une projection sur le nom de produit et la quantité vendue par unité
+                    achetée.</p></li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>Deuxième requête</strong> :</p>
+                <ul>
+                  <li><p>Nous travaillons sur la table obtenue à l’aide de la première requête.</p></li>
+                  <li><p>Nous regroupons les tuples par nom de produit.</p></li>
+                  <li><p>Nous effectuons une projection sur le nom de produit, nous utilisons la fonction d’agrégation
+                    First pour sélectionner le premier élément des quantités vendues par unités achetées, que nous
+                    renommons PremierDeQteParUnite, et nous utilisons la fonction d’agrégation Somme (Sum) pour faire la
+                    somme des quantités vendues.</p></li>
+                  <li><p>Nous ordonnons les tuples ainsi obtenus par ladite somme, dans l’ordre décroissant, afin
+                    d’afficher les produits les plus vendus en premier.</p></li>
+                </ul>
+              </li>
+            </ul>
+            <p>Nous effectuons donc les requêtes suivantes :<br></p>
+            <p>
+              <code>
+                SELECT Produit.NomProd, Produit.QteParUnite <br>
+                FROM Commande INNER JOIN (Produit INNER JOIN DetailCommande ON
+                Produit.RefProd = DetailCommande.RefProd) <br>
+                ON Commande.NoCom = DetailCommande.NoCom;
+              </code>
+            </p>
+            <p>
+              <code>
+                SELECT [Requête1 Farah].NomProd, First([Requête1
+                Farah].QteParUnite) AS PremierDeQteParUnite, Sum([Somme]) AS
+                Expr1 FROM [Requête1 Farah] <br>
+                GROUP BY [Requête1 Farah].NomProd <br>
+                ORDER BY Sum([Somme]) DESC; <br>
+              </code>
+            </p>
+            <p>Nous obtenons la table suivante :</p>
+            <img id="midlongheight" src="images/mission_3/Farah.png" alt="Table résultat">
+          </li>
+          <li class="anastasia2Pres">
+            <p><strong>Requête d'Abdelhafid</strong> : détermination des catégories dans lesquelles se vendent le plus
+              de produits, là aussi afin de permettre à KDou de focaliser son offre là où la demande est la plus élevée.
+            </p>
+            <ul>
+              <li><p>Nous effectuons une jointure sur le code catégoriel entre les tables Categorie et Produit.</p></li>
+              <li><p>Nous effectuons une jointure sur la référence du produit entre la table ainsi obtenue et la table
+                DetailCommande.</p></li>
+              <li><p>Nous effectuons une jointure sur le numéro de fournisseur entre la table obtenue par les deux
+                jointures précédentes et la table Fournisseur.</p></li>
+              <li><p>Nous regroupons les tuples par nom de catégorie.</p></li>
+              <li><p>Nous effectuons une projection sur le nom de la catégorie et nous utilisons la fonction
+                d’agrégation de compte (Count) pour faire le compte des noms de catégorie (on aurait ici pu choisir un
+                autre attribut) que nous renommons CompteDeNomCateg.</p></li>
+              <li><p>Nous ordonnons les enregistrements ainsi obtenus par ledit compte, dans l’ordre décroissant.</p>
+              </li>
+            </ul>
+            <p>Nous effectuons donc la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT Categorie.NomCateg, Count(Categorie.[NomCateg]) AS
+                CompteDeNomCateg <br>
+                FROM Fournisseur INNER JOIN ((Categorie INNER JOIN Produit ON
+                Categorie.CodeCateg = Produit.CodeCateg) INNER JOIN
+                DetailCommande ON Produit.RefProd = DetailCommande.RefProd) ON
+                Fournisseur.NoFour = Produit.NoFour <br>
+                GROUP BY Categorie.NomCateg <br>
+                ORDER BY Count(Categorie.[NomCateg]) DESC;
+              </code>
+            </p>
+            <p>Et nous obtenons la table suivante :</p>
+            <img src="images/mission_3/Abdelhafid.png" alt="Table résultat">
+          </li>
+          <li class="anastasia2Pres">
+            <p><strong>Requête d'Adam</strong> : détermination des fournisseurs qui ont des client·es dans le même pays
+              qu’eux, afin de permettre à KDou de faciliter les échanges entre client·es et fournisseurs du même pays et
+              de promouvoir le commerce local.</p>
+            <ul>
+              <li><p>Nous effectuons une jointure sur la référence du produit entre les tables Produit et
+                DetailCommande.</p></li>
+              <li><p>Nous effectuons une jointure sur le numéro de fournisseur entre la table ainsi obtenue et la table
+                Fournisseur.</p></li>
+              <li><p>Nous effectuons une jointure sur le numéro de commande entre la table ainsi obtenue et la table
+                Commande.</p></li>
+              <li><p>Nous effectuons une jointure sur le code client entre la table obtenue par ces jointures
+                successives et la table Client.</p></li>
+              <li><p>Nous regroupons les tuples par code client, pays du/de la client·e, numéro de fournisseur et pays
+                du fournisseur.</p></li>
+              <li><p>Nous restreignons les regroupements obtenus à ceux dont le pays du/ de la client·e est le même que
+                le pays du fournisseur.</p></li>
+              <li><p>Nous effectuons une projection sur le code client, le pays du/de la client·e, le numéro de
+                fournisseur et le pays du fournisseur.</p></li>
+              <li><p>Nous ordonnons les tuples ainsi obtenus par code client dans l’ordre croissant.</p></li>
+            </ul>
+            <p>Nous effectuons donc la requête SQL suivante :<br></p>
+            <p>
+              <code>
+                SELECT DISTINCT Client.CodeCli, Client.Pays,
+                Fournisseur.NoFour, Fournisseur.Pays <br>
+                FROM Client INNER JOIN (Commande INNER JOIN (Fournisseur INNER
+                JOIN (Produit INNER JOIN DetailCommande ON Produit.RefProd =
+                DetailCommande.RefProd) ON Fournisseur.NoFour = Produit.NoFour)
+                ON Commande.NoCom = DetailCommande.NoCom) ON Client.CodeCli =
+                Commande.CodeCli <br>
+                GROUP BY Client.CodeCli, Client.Pays,
+                Fournisseur.NoFour, Fournisseur.Pays, 1 <br>
+                HAVING (((Client.Pays)=[Fournisseur].[Pays])) <br>
+                ORDER BY 1;
+              </code>
+            </p>
+            <p>Nous obtenons la table suivante :</p>
+            <img src="images/mission_3/Adam.png" alt="Table résultat">
+          </li>
+      </ul>
+    </article>
+  </section>
+</main>
+</body>
+<!-- Pied de page -->
+<footer>
+  <p>&copy; 2024 - SAE 1.04 – Abdelhafid Farah Anastasia Adam –</p>
+</footer>
+</html>
+

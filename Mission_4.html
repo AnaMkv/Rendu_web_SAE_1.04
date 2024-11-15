@@ -1,0 +1,294 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- Création de l'en-tête avec une image -->
+        
+        <!-- Fin de la création de l'en-tête -->
+
+        
+        <main>
+            <div class = "navigation">
+                <nav>
+                    <div class="img_NAV">
+                        <img src="images/KDOU_COMPTE_RENDU_NAV.png" alt="logo de kdou">
+                    </div>
+                    <input type="checkbox" id="burger-toggle">
+                    <label for="burger-toggle" class="burger-icon">☰</label>
+                    <ul class="menu_nav">
+                        <li><a href="Accueil.html"> ACCUEIL</a></li>
+                        <li><a href="Mission_1.html">MISSION 1</a></li>
+                        <li><a href="Mission_2.html">MISSION 2</a></li>
+                        <li><a href="Mission_3.html">MISSION 3</a></li>
+                        <li><a href="Mission_4.html">MISSION 4</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class = "sommaire">
+                <div class="aside_frh">
+                    <aside> 
+                        <ul>
+                            <li><a href="#chapter1"> ➢ CONSIGNES</a></li><hr>
+                            <li><a href="#chapter2">➢ HTML, CSS, LE WEB : c'est quoi ?</a></li><hr>
+                            <li><a href="#chapter3">➢ BASES DE NOTRE RAPPORT</a></li><hr>
+                                <ul>
+                                    <li><a href="#chapter3">  CLASS & ID</a></li><hr>
+                                </ul>
+                            <li><a href="#chapter4">➢ INSERTIONS</a></li><hr>
+                            
+                        </ul>
+                    </aside>
+                </div>
+                <div class = "developpement">
+                    <h1>MISSION 4</h1>
+                    <div id="WebQuote">
+                        <q>Le code est comme l'humour. Quand vous devez l'expliquer, c'est qu'il n'est pas si bon.</q><br>
+                    <a href ="https://www.bitnative.com/about/"> — Cory House —</a>
+                    </div>
+                    <div class="chapter" id="chapter1">
+                        <h3>CONSIGNES</h3>
+                        <div class = "consignesWEB">
+                            <p> 
+                                Nous avions pour mission de créer un rapport web en utilisant uniquement HTML et CSS. Le site devait comporter plusieurs pages : une page d'accueil avec une présentation du groupe et des liens vers les chapitres. Chaque mission (1, 2 et 3) était détaillée dans des sections spécifiques, avec des contenus sur les données de KDou, des analyses et des indicateurs, accompagnés de résultats et de requêtes SQL.
+                                
+                                Le site devait être responsive, lisible sur ordinateur de bureau et portable. Il fallait respecter les bonnes pratiques HTML5, en utilisant des balises sémantiques et en évitant les éléments superflus. La mise en page devait inclure une navigation fixe, un pied de page, ainsi que des images, des tableaux et des listes. Les styles CSS devaient être bien structurés et le design soigné, avec des tests sur plusieurs navigateurs pour garantir la compatibilité. </p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="chapter" id="chapter2">
+                        <h3> HTML, CSS, LE WEB : c'est quoi ?</h3>
+                        <div class = "WEB">
+                            <img src = "images/mission4_WEB2.png" alt ="WEB">
+                            <div class = "WEBDESC">
+                                <p>Le <i>développement web</i> consiste à créer des sites et applications en ligne, combinant des éléments de <i>structure</i>, <i> de style</i>, et <i> logique</i> pour une expérience utilisateur fluide. Le <i>HTML (HyperText Markup Language)</i> est la base d'une page web, fournissant la structure en organisant le contenu avec des balises pour les titres, paragraphes, images, etc. <i>CSS (Cascading Style Sheets) </i>vient ensuite pour styliser cette structure, ajoutant des couleurs, des polices, et des mises en page afin de rendre le site attrayant et professionnel. <i>Ensemble, HTML et CSS permettent de concevoir des sites</i> à la fois fonctionnels et visuellement agréables.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter" id="chapter3">
+                        <h3> LES BASES DE NOTRE RAPPORT</h3>
+                        <!-- ______________________________________________________ -->
+                        <div class="slider_frh_abd">
+                            <div class="bouton">
+                                <label for="slide_frh_1"></label>
+                                <label for="slide_frh_2"></label>
+                                <label for="slide_frh_3"></label>
+                                <label for="slide_frh_4"></label>
+                                <label for="slide_frh_5"></label>
+                                <label for="slide_frh_6"></label>
+                                <label for="slide_frh_7"></label>
+                                <label for="slide_frh_8"></label>
+                            </div> 
+                        
+
+                            <div class = "slides">
+                                <!-- Slide 1 -->
+                                <input class="slide_input" id="slide_frh_1" type="radio" name="slidesss" checked />
+                                <div class="slide_frh_abd">
+                                    <table class="DOCTYPE">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_doctype2.jpg" alt="doctype"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>!DOCTYPE Html</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>La balise <strong>!DOCTYPE HTML</strong> est une déclaration située en haut d'un document HTML qui informe le navigateur du type de document qu'il va interpréter. Elle est utilisée pour définir le standard de version HTML. Cette déclaration n'affiche aucun contenu sur la page, mais elle permet au navigateur de rendre correctement le document.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            
+                                <!-- Slide 2 -->
+                                <input class="slide_input" id="slide_frh_2" type="radio" name="slidesss" />
+                                <div class="slide_frh_abd">
+                                    <table class="HTML">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_html4.jpg" alt="html"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>HTML</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>La balise <strong>HTML</strong> enveloppe tout le contenu de la page, à l'exception de la déclaration !DOCTYPE html. C’est à l’intérieur de la balise que tous les autres éléments HTML, comme le HEAD et le BODY, sont placés. La balise peut aussi inclure un attribut lang pour spécifier la langue du contenu de la page, ce qui aide les moteurs de recherche et les technologies d’assistance à mieux comprendre et traiter la page.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            
+                                <!-- Slide 3 -->
+                                <input class="slide_input" id="slide_frh_3" type="radio" name="slidesss" />
+                                <div class="slide_frh_abd">
+                                    <table class="HEAD">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_head2.jpg" alt="head"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>HEAD</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>La balise <head> en HTML contient des informations sur le document (métadonnées) qui ne sont généralement pas visibles pour l'utilisateur sur la page web. Elle se situe entre la balise <html> et la balise <body>. C’est dans le HEAD que l’on place des éléments tels que le titre de la page, les liens vers des fichiers CSS, etc.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- Slide 4 -->
+                                <input class="slide_input" id="slide_frh_4" type="radio" name="slidesss" />
+                                <div class="slide_frh_abd">
+                                    <table class="BODY">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_body2.jpg" alt="body"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>BODY</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>La balise BODY en HTML est utilisée pour définir la section d'un document HTML qui contient le contenu visible par l'utilisateur sur une page web. Tout ce qui apparaît dans le navigateur (texte, images, vidéos, liens, formulaires, etc.) doit être placé à l'intérieur de cette balise</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- Slide 5 -->
+                                <input class="slide_input" id="slide_frh_5" type="radio" name="slidesss" />
+                                <div class="slide_frh_abd">
+                                    <table class="MAIN">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_body2.jpg" alt="main"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>MAIN</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>La balise MAIN en HTML est utilisée pour décrire le contenu principal d'un document. Ce contenu est directement lié au sujet ou à la fonctionnalité principale de la page et est essentiel pour la compréhension du site par l'utilisateur.
+
+                                                Elle a été introduite dans HTML5 pour offrir une meilleure structuration et faciliter l’accessibilité.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- Slide 6 -->
+                                <input class="slide_input" id="slide_frh_6" type="radio" name="slidesss" />
+                                <div class="slide_frh_abd">
+                                    <table class="ARTICLE">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_body2.jpg" alt="article"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>ARTICLE</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>La balise ARTICLE en HTML est utilisée pour définir un contenu autonome et indépendant qui pourrait être distribué ou réutilisé à l'extérieur du site. Un article représente un bloc de contenu complet. Cela peut être un article de blog, une publication sur un forum, une nouvelle, etc. L'élément est principalement utilisé pour les sections de contenu qui peuvent être partagées ou redistribuées indépendamment.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- Slide 7 -->
+                                <input class="slide_input" id="slide_frh_7" type="radio" name="slidesss" />
+                                <div class="slide_frh_abd">
+                                    <table class="CLASS">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_body2.jpg" alt="class"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>CLASS</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>La balise class n'est pas une balise HTML, mais un attribut utilisé pour appliquer des styles CSS ou pour cibler des éléments avec JavaScript. Cet attribut permet d'identifier et de regrouper des éléments HTML sous un même nom de classe. Il est extrêmement utilisé pour styliser plusieurs éléments HTML de manière cohérente avec une règle CSS.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- Slide 8 -->
+                                <input class="slide_input" id="slide_frh_8" type="radio" name="slidesss" />
+                                <div class="slide_frh_abd">
+                                    <table class="ID">
+                                        <tr class="balise">
+                                            <td class="img_slide_frh"><img src="images/mission4_body2.jpg" alt="id"></td>
+                                        </tr>
+                                        <tr class="NomBalise">
+                                            <td><strong>ID</strong></td>
+                                        </tr>
+                                        <tr class="DescriptionBalise">
+                                            <td>L'attribut ID est utilisé pour identifier de manière unique un élément dans une page HTML. Contrairement à la classe (class), qui peut être utilisée pour plusieurs éléments, un id doit être unique dans tout le document, ce qui signifie qu'il ne doit être attribué qu'à un seul élément. Il est très utile pour cibler un élément spécifique via du CSS, du JavaScript ou encore pour les liens d'ancrage dans une page.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="chapter" id="chapter4">
+                        <h3>
+                            MÉTHODES D'INSERTION
+                        </h3>
+                        <div class="insertion">
+                            <!-- Section "Les Tableaux" -->
+        
+                            <div class="accordeon_insertion-item">
+                                <input type="checkbox" id="accordeon1" class="accordeon_insertion-checkbox">
+                                <label for="accordeon1" class="accordeon_insertion-toggle">
+                                    <span class="arrow">&#9660;</span> <!-- Flèche vers le bas (Unicode) -->
+                                    TABLEAUX
+                                </label>
+        
+                                <div class="accordeon_insertion-content">
+                                    <h3><strong>1. Insérer un tableau en HTML</strong></h3>
+                                    <p>Le tableau en HTML se construit avec plusieurs balises de base :</p>
+                                    <ul>
+                                        <li><strong>TABLE</strong> : La balise principale qui englobe tout le tableau.</li>
+                                        <li><strong>TR (table row)</strong> : Définit une ligne du tableau.</li>
+                                        <li><strong>TH (table header)</strong> : Définit une cellule d'en-tête (en gras et centré par défaut).</li>
+                                        <li><strong>TD (table data)</strong> : Définit une cellule de données normale.</li>
+                                        <li><strong>CSS</strong> : Espacement interne (padding) et externe (margin) : Le padding est utilisé pour ajouter de l’espace à l’intérieur de chaque cellule.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordeon_insertion-item">
+                                <input type="checkbox" id="accordeon2" class="accordeon_insertion-checkbox">
+                                <label for="accordeon2" class="accordeon_insertion-toggle">
+                                    <span class="arrow">&#9660;</span> <!-- Flèche vers le bas (Unicode) -->
+                                    IMAGES
+                                </label>
+        
+                                <!-- Le contenu caché de l'accordéon -->
+                                <div class="accordeon_insertion-content">
+                                    <h3><strong>2. Insérer une image en HTML</strong></h3>
+                                    <p>Pour insérer une image, on utilise la balise "img". Cette balise est auto-fermante et nécessite au minimum l'attribut <strong>src</strong> pour indiquer le chemin de l'image et l'attribut <strong>alt</strong> pour fournir un texte alternatif.</p>
+                                    <ul>
+                                        <li><strong>(src)</strong> : Chemin vers l'image (peut être une URL ou un chemin relatif).</p>
+                                        <li><strong>(alt)</strong> : Texte alternatif qui décrit l'image, utile pour l'accessibilité et si l'image ne peut pas être affichée.</li>
+                                        <li><strong>(width et height)</strong> : Attributs optionnels pour définir la largeur et la hauteur de l'image.</li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                            <div class="accordeon_insertion-item">
+                                <!-- La case à cocher cachée -->
+                                <input type="checkbox" id="accordeon3" class="accordeon_insertion-checkbox">
+                                
+                                <!-- Le bouton avec la flèche et le texte -->
+                                <label for="accordeon3" class="accordeon_insertion-toggle">
+                                    <span class="arrow">&#9660;</span> <!-- Flèche vers le bas -->
+                                    VIDEOS
+                                </label>
+        
+                                <!-- Le contenu caché de l'accordéon -->
+                                <div class="accordeon_insertion-content">
+                                    <h3><strong>3. Insérer une vidéo en HTML</strong></h3>
+                                    <p>Pour insérer une vidéo, on utilise la balise "video". Cette balise peut contenir plusieurs attributs et balises pour un meilleur contrôle et accessibilité.</p>
+                                    <ul>
+                                        <li><strong>(Controls)</strong> : Cet attribut ajoute des contrôles de lecture (play, pause, volume, etc.) pour l'utilisateur.</li>
+                                        <li><strong>(Source)</strong> : Cette balise est utilisée pour spécifier les différents formats de la vidéo afin de garantir la compatibilité avec différents navigateurs.</li>
+                                        <li><strong>(Type)</strong> : Spécifie le type de fichier vidéo (par exemple, video/mp4 ou video/ogg).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </main>
+        
+    </body>
+    <footer >
+        <p>&copy; 2024 - SAE Abdel Farah Anastasia Adam- Tous droits réservés.</p>
+    </footer>
+</html>
